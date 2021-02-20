@@ -3,10 +3,6 @@ const User = require('../models/userModels');
 const UserController = require('../controllers/UserController');
 
 
- module.exports = function(app){
-    app.get('/', UserController.getAllUsers);
- }
- 
 module.exports = function(app){
     app.get('/', UserController.getAllUsers);
     // Login
