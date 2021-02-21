@@ -1,7 +1,7 @@
 const { Post } = require('../models/userModels');
 const bcrypt = require('bcrypt');
-// const express = require('express');
-// const jwt = require('jsonwebtoken');
+const express = require('express');
+const jwt = require('jsonwebtoken');
 const validateLogin = require('../validation/validateLogin');
 const validateSignup = require('../validation/validateSignup');
 
