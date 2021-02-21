@@ -205,6 +205,7 @@ const useStyles = makeStyles((theme) => ({
             variant="contained"
             color="primary"
             className={classes.submit}
+            onClick={handleSubmit}
           >
             Sign In
           </Button>

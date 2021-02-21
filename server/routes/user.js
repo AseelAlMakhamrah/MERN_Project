@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const multer = require('multer');
 const userController = require('../controller/user');
+const { loginCheck } = require("../middleware/auth");
 
 // Image Upload setting
 var storage = multer.diskStorage({
@@ -21,5 +22,13 @@ router.post('/follow', userController.followUser)
 router.post('/unfollow', userController.unfollowUser)
 router.post('/change-profile-pic', upload.single('profile_pic'), userController.changeProfilePic)
 router.post('/search-user', userController.searchUser)
+// router.get("/", loginCheck, async (req, res) => {
+//     try {
+//       const user = await User.findById(req.user._id).select("-password -__v");
+//       res.json(user);
+//     } catch (error) {
+//       return res.status(400).json({ error: err.message });
+//     }
+//   });
 
 module.exports = router;
