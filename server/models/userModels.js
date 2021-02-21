@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { ObjectId } = mongoose.Schema.Types
 const UserSchema = new mongoose.Schema({
 name: {
     type: String,
@@ -14,23 +15,22 @@ password :{
     type: String,
     required:true,
 },
-passwordConfirm :{
+
+profile_pic: {
     type: String,
-    required:true,
-},
-followers:{
-    type: [String]
-},
-following:{
-    type: [String]
+    default: "user.png"
 },
 bio:{
     type: String
 },
-createdAt:{
-    type:Number,
-    required: true
+followers: [{ type: ObjectId, ref: "userModels" }],
+following: [{ type: ObjectId, ref: "userModels" }],
+date: {
+    type: Date,
+    default: Date.now()
+}
+
 },
-});
-module.exports = mongoose.model('User', UserSchema);
+);
+module.exports = mongoose.model('userModels', UserSchema);
 
