@@ -8,8 +8,8 @@ import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import { withStyles } from '@material-ui/core/styles';
 
-import NavbarLeftMenu from './LeftMenu';
-import NavbarRightMenu from './RightMenu';
+import NavbarLeftMenu from '../parts/LeftMenu';
+import NavbarRightMenu from '../parts/RightMenu';
 
 const styles = {
   flex: {
@@ -30,8 +30,7 @@ const styles = {
 
 class Navbar extends Component {
   render() {
-    // const { classes, logoutUser, user } = this.props;
-    const { classes } = this.props;
+    const { classes, logoutUser, user } = this.props;
     return (
       <div className={classes.root} >
         <AppBar position="static" style={{backgroundColor: "#691489"}} >
@@ -41,7 +40,7 @@ class Navbar extends Component {
               color="inherit"
               aria-label="Menu"
             >
-              <NavbarLeftMenu user="you are hero" />
+              <NavbarLeftMenu user={user} />
             </IconButton>
             <Typography
               className={classes.flex}
@@ -53,7 +52,7 @@ class Navbar extends Component {
               </Link>
             </Typography>
             <div>
-              <NavbarRightMenu user="you are hero"  />
+              <NavbarRightMenu logoutUser={logoutUser} user={user} />
             </div>
           </Toolbar>
         </AppBar>
@@ -62,10 +61,10 @@ class Navbar extends Component {
   }
 }
 
-// Navbar.propTypes = {
-//   classes: PropTypes.object.isRequired,
-//   logoutUser: PropTypes.func.isRequired,
-//   user: PropTypes.object.isRequired
-// };
+Navbar.propTypes = {
+  classes: PropTypes.object.isRequired,
+  logoutUser: PropTypes.func.isRequired,
+  user: PropTypes.object.isRequired
+};
 
 export default withStyles(styles)(Navbar);

@@ -22,7 +22,7 @@ const styles = {
 
 class NavbarRightMenu extends Component {
   state = {
-    // anchorEl: null
+    anchorEl: null
   };
 
   handleClick = (event) => {
@@ -34,23 +34,23 @@ class NavbarRightMenu extends Component {
   };
 
   render() {
-    // const { classes, logoutUser, user } = this.props;
-    // const { anchorEl } = this.state;
+    const { classes, logoutUser } = this.props;
+    const { anchorEl } = this.state;
 
     return (
       <div>
         <Button
-        //   aria-owns={anchorEl ? 'right-menu' : null}
+          aria-owns={anchorEl ? 'right-menu' : null}
           aria-haspopup="true"
          
           onClick={this.handleClick}
         >
-         you are hero
-        </Button>
+
+         </Button>
         <Menu
           id="right-menu"
-        //   anchorEl={anchorEl}
-        //   open={Boolean(anchorEl)}
+          anchorEl={anchorEl}
+          open={Boolean(anchorEl)}
           onClose={this.handleClose}
         >
           <Link to={`/profile/`}>

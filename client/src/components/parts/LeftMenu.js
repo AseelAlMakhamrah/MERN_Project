@@ -38,7 +38,7 @@ class NavbarLeftMenu extends React.Component {
         <div className={classes.toolbar} />
         <Divider />
         <List>
-          <FolderListItems user="you are hero"  />
+          <FolderListItems user="batee5"  />
         </List>
         <Divider />
         <List>{OtherFolderListItems}</List>

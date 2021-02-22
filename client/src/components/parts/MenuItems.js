@@ -63,5 +63,5 @@ export const OtherFolderListItems = (
 );
 
 // FolderListItems.propTypes = {
-// //   user: PropTypes.object.isRequired
+//   user: PropTypes.object.isRequired
 // };
