@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import NavbarContainer from '../parts/NavBar';
 import CreatePost from '../parts/CreatePost';
+import Post from '../parts/Post';
+
 
 export class HomePage extends Component {
   componentDidMount = () => {
@@ -17,6 +19,7 @@ export class HomePage extends Component {
       <div>
         <NavbarContainer />
         <CreatePost />
+        <Post/>
       </div>
     );
   }
