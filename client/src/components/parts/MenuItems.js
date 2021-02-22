@@ -9,6 +9,8 @@ import GroupIcon from '@material-ui/icons/GroupAdd';
 import HomeIcon from '@material-ui/icons/Home';
 import PeopleIcon from '@material-ui/icons/People';
 import SettingsIcon from '@material-ui/icons/Settings';
+import MenuItem from '@material-ui/core/MenuItem';
+
 
 import { Link } from 'react-router-dom';
 
@@ -51,14 +53,16 @@ export const FolderListItems  = (
 
 export const OtherFolderListItems = (
   <div>
-    <Link style={{ textDecoration: 'none' }} to="/settings">
+    {/* <Link style={{ textDecoration: 'none' }} to="/settings">
       <ListItem button>
         <ListItemIcon>
           <SettingsIcon />
         </ListItemIcon>
         <ListItemText primary="Settings" />
       </ListItem>
-    </Link>
+    </Link> */}
+    <MenuItem >Logout</MenuItem>
+
   </div>
 );
 

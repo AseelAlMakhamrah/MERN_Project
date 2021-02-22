@@ -149,8 +149,10 @@ const useStyles = makeStyles((theme) => ({
           },
         }
       );
-      localStorage.setItem("token", res.data.token);
-      props.history.push("/");
+      localStorage.setItem("token", res.data);
+      console.log(res.data.user.user);
+      props.user(res.data.user.user);
+      // props.history.push("/");
     } catch (err) {
       setData({ ...data, error: err.response.data.error });
     }

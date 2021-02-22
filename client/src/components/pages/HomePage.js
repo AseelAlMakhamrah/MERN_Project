@@ -7,16 +7,28 @@ import Post from '../parts/Post';
 
 
 export class HomePage extends Component {
-  componentDidMount = () => {
-    const { history } = this.props;
-    if (!localStorage.jwtToken) {
-      history.push('/login');
+  constructor(props){
+    super(props)
+    this.state={
+      user : props.user
     }
+  }
+  componentDidMount = () => {
+    // const { history } = this.props;
+    // if (!localStorage.jwtToken) {
+    //   history.push('/login');
+    // }
+    console.log("55555555555555555555555555555555555555555555555");
+
+    console.log(this.state.user);
+
   };
+
 
   render() {
     return (
       <div>
+        <div> {}</div>
         <NavbarContainer />
         <CreatePost />
         <Post/>

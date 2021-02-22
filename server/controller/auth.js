@@ -58,12 +58,13 @@ class Auth {
             } else {
                 const login = await bcrypt.compare(password, data.password)
                 if (login) {
-                    const token = jwt.sign({ _id: data._id }, JWT_SECRET);
+                    const token = jwt.sign({ user: data }, JWT_SECRET);
                     const decode = jwt.verify(token, JWT_SECRET)
                     return res.json({
                         message: "Login successfully",
                         token: token,
                         user: decode
+
                     })
                 } else {
                     return res.json({
