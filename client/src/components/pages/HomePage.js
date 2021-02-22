@@ -28,7 +28,7 @@ export class HomePage extends Component {
   render() {
     return (
       <div>
-        <div> {}</div>
+        <div>  <h1>{this.props.user.name}</h1></div>
         <NavbarContainer />
         <CreatePost />
         <Post/>
